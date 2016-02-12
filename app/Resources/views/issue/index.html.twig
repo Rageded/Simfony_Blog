@@ -3,12 +3,11 @@
 {% block body %}
     <h1>Issue list</h1>
 
-    <table>
+    <table class ="records_list table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Number</th>
-                <th>Datepublication</th>
+                <th>Blog</th>
+                <th>Issue</th>
                 <th>Cover</th>
                 <th>Actions</th>
             </tr>
@@ -16,28 +15,21 @@
         <tbody>
         {% for issue in issues %}
             <tr>
-                <td><a href="{{ path('issue_show', { 'id': issue.id }) }}">{{ issue.id }}</a></td>
-                <td>{{ issue.number }}</td>
-                <td>{% if issue.datePublication %}{{ issue.datePublication|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ issue.cover }}</td>
+                <td>{{ issue.publication.name }}</td>
+                <td>#{{ issue.number }} - {% if issue.datePublication %}{{ issue.datePublication|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if issue.cover %}<img class = "max"
+                  src="{{ asset(issue.getCoverWeb) }}" />{% endif %}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('issue_show', { 'id': issue.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('issue_edit', { 'id': issue.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                      <a  class = "btn btn-default" class = btn btn-default btn-xs" href="{{ path('issue_show', { 'id': issue.id }) }}">show</a>
+                      <a class = "btn btn-default" class = btn btn-default btn-xs" href="{{ path('issue_edit', { 'id': issue.id }) }}">edit</a>
+
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('issue_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+
+            <a class = "btn btn-default" href="{{ path('issue_new') }}">Create a new entry</a>
+
 {% endblock %}

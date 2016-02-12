@@ -3,30 +3,30 @@
 {% block body %}
     <h1>Publication</h1>
 
-    <table>
+    <table class ="records_list table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>Id:</th>
                 <td>{{ publication.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Name:</th>
                 <td>{{ publication.name }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('publication_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('publication_edit', { 'id': publication.id }) }}">Edit</a>
-        </li>
-        <li>
+
+            <a href="{{ path('publication_index') }}"> << Back to the list</a>
+
+            <br>
+            <a   class = "btn btn-default" href="{{ path('publication_edit', { 'id': publication.id }) }}">Edit</a>
+
+
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input  class = "btn btn-default" type="submit" value="Delete">
             {{ form_end(delete_form) }}
-        </li>
+
     </ul>
 {% endblock %}

@@ -1,0 +1,73 @@
+body {
+  background-color: #222222;
+  color: #C0C0C0;
+}
+table tbody {
+  padding: 15px;
+}
+table {
+  background-color: #000033;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+table thead {
+  background-color: #A8A8A8 ;
+  color: black;
+  border-radius: 15px;
+}
+
+ table li {
+  padding: 10px;
+  margin: 10px;
+}
+
+.max {
+
+  width: 60%;
+  min-width: 80px;
+  max-width: 300px;
+}
+
+form input {
+  color: black;
+}
+
+select {
+  color: black;
+}
+
+form {
+  padding: 5px;
+}
+
+input {
+  margin: 10px;
+}
+
+
+a {
+  color: #99FFCC;
+  font-weight: bold;
+}
+
+.coolBlue {
+  background-color: #000033 ;
+  color: #A8A8A8;
+  border-radius: 15px;
+  }
+
+  h1 {
+  text-align: center;
+  font-family: times, Times New Roman, times-roman, georgia, serif;
+	margin: 0;
+	padding: 0px 0px 6px 0px;
+	font-size: 51px;
+	line-height: 44px;
+	letter-spacing: -2px;
+	font-weight: bold;
+  }
+
+  .btn {
+    margin-top: 5px;
+  }
